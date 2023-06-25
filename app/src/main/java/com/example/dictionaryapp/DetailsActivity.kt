@@ -7,7 +7,7 @@ import com.example.dictionaryapp.databinding.ActivityDetailsBinding
 
 class DetailsActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityDetailsBinding
+    private lateinit var binding: ActivityDetailsBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

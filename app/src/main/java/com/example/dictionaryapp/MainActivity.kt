@@ -2,12 +2,14 @@ package com.example.dictionaryapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dictionaryapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
-    private lateinit var wordsList:ArrayList<Words>
+    private lateinit var wordsList: ArrayList<Words>
     private lateinit var adapter: WordsAdapter
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         wordsList = ArrayList()
 
-        val w1 = Words(1,"Dog", "Köpek")
-        val w2 = Words(1,"Apple", "Elma")
-        val w3 = Words(1,"Dog", "Köpek")
+        val w1 = Words(1, "Dog", "Köpek")
+        val w2 = Words(1, "Apple", "Elma")
+        val w3 = Words(1, "Dog", "Köpek")
 
         wordsList.add(w1)
         wordsList.add(w2)
@@ -37,5 +39,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.rv.adapter = adapter
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        val item = menu?.findItem(R.id.action_search)
+        val searchView = item?.actionView as SearchView
+        searchView.setOnQueryTextListener(this)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        return true
     }
 }
