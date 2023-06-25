@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.toolbar.title = "Dictionary App"
+        binding.toolbar.setTitleTextColor(resources.getColor(R.color.white))
         setSupportActionBar(binding.toolbar)
 
         binding.rv.setHasFixedSize(true)
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         wordsList = ArrayList()
 
         val w1 = Words(1,"Dog", "Köpek")
-        val w2 = Words(1,"Dog", "Köpek")
+        val w2 = Words(1,"Apple", "Elma")
         val w3 = Words(1,"Dog", "Köpek")
 
         wordsList.add(w1)

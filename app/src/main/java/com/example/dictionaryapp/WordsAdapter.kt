@@ -1,6 +1,7 @@
 package com.example.dictionaryapp
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +40,10 @@ class WordsAdapter(private val mContext:Context, private val wordsList:List<Word
         holder.textViewTurkish.text = word.turkish
 
         holder.word_card.setOnClickListener {
+            val intent = Intent(mContext,DetailsActivity::class.java)
+            intent.putExtra("object", word)
 
+            mContext.startActivity(intent)
         }
     }
 }
