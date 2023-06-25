@@ -39,7 +39,7 @@ class WordsAdapter(private val mContext:Context, private val wordsList:List<Word
         holder.textViewTurkish.text = word.turkish
 
         holder.word_card.setOnClickListener {
-            
+
         }
     }
 }
