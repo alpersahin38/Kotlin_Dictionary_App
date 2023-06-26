@@ -46,11 +46,13 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onQueryTextSubmit(query: String?): Boolean {
+    override fun onQueryTextSubmit(query: String): Boolean {
+        Search(query)
         return true
     }
 
-    override fun onQueryTextChange(newText: String?): Boolean {
+    override fun onQueryTextChange(newText: String): Boolean {
+        Search(newText)
         return true
     }
 
@@ -64,7 +66,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         }
     }
 
-    fun Search(){
+    fun Search(searchWords: String){
         wordsList = Wordsdao().allWords(vt)
 
         adapter = WordsAdapter(this, wordsList)

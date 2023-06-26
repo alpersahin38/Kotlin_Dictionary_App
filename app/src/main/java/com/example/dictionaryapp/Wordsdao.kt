@@ -9,7 +9,7 @@ class Wordsdao {
 
         while (c.moveToNext()){
             val word = Words(c.getInt(c.getColumnIndex("kelime_id"))
-                ,c.getString(c.getColumnIndex("inglizce"))
+                ,c.getString(c.getColumnIndex("ingilizce"))
                 , c.getString(c.getColumnIndex("turkce")))
             wordsList.add(word)
         }
@@ -24,7 +24,7 @@ class Wordsdao {
 
         while (c.moveToNext()){
             val word = Words(c.getInt(c.getColumnIndex("kelime_id"))
-                ,c.getString(c.getColumnIndex("inglizce"))
+                ,c.getString(c.getColumnIndex("ingilizce"))
                 , c.getString(c.getColumnIndex("turkce")))
             wordsList.add(word)
         }
